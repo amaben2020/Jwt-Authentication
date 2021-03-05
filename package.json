@@ -1,5 +1,5 @@
 {
-	"name": "complex-app",
+	"name": "auth-app",
 	"version": "1.0.0",
 	"description": "hey dude",
 	"main": "db.js",
@@ -9,7 +9,7 @@
 	},
 	"scripts": {
 		"watch": "nodemon",
-		"start": "nodemon server.js ",
+		"start": "nodemon index.js ",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [],

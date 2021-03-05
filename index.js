@@ -1,10 +1,12 @@
 const express = require("express");
 const authRoute = require("./routes/auth");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const postRoute = require("./PrivateRoute/Posts");
 //Initializing express
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 //puts/hides password when hosted
@@ -22,12 +24,10 @@ app.use(express.json());
 app.use("/api/user", authRoute);
 app.use("/api/posts", postRoute);
 
-const PORT = 7000;
-
-app.get("/", () => {
-	console.log("Root Route");
+app.get("/", (req, res) => {
+	res.send("Root route");
 });
 
-app.listen(process.env.PORT, () => {
-	console.log(`server is running excellently well ${PORT}`);
+app.listen(7000, () => {
+	console.log(`server is running excellently well `);
 });
