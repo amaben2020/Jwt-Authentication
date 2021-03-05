@@ -22,6 +22,12 @@ app.use(express.json());
 app.use("/api/user", authRoute);
 app.use("/api/posts", postRoute);
 
-app.listen(7000, () => {
-	console.log("server is running excellently well");
+const PORT = 7000;
+
+app.get("/", () => {
+	console.log("Root Route");
+});
+
+app.listen(process.env.PORT, () => {
+	console.log(`server is running excellently well ${PORT}`);
 });
