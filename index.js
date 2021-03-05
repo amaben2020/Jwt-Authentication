@@ -2,7 +2,7 @@ const express = require("express");
 const authRoute = require("./routes/auth");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-
+const postRoute = require("./PrivateRoute/Posts");
 //Initializing express
 const app = express();
 app.use(express.json());
@@ -20,10 +20,7 @@ mongoose.connect(
 //Middlewares with authRoute as parameter
 app.use(express.json());
 app.use("/api/user", authRoute);
-
-app.get("/", (req, res) => {
-	res.send("Works well root route");
-});
+app.use("/api/posts", postRoute);
 
 app.listen(7000, () => {
 	console.log("server is running");
