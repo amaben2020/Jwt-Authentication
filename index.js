@@ -23,5 +23,5 @@ app.use("/api/user", authRoute);
 app.use("/api/posts", postRoute);
 
 app.listen(7000, () => {
-	console.log("server is running");
+	console.log("server is running excellently well");
 });
